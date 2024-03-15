@@ -62,32 +62,19 @@ function getCal(data) {
 
 async function getRecipe(ingredient1,ingredient2,ingredient3)
 { 
-    const requestBody = 
+    const URL = `${BASEURL}/recipes/information?apiKey=${APIKEY}&ingredients=${ingredient1},${ingredient2},${ingredient3}`;
+
+    console.log(URL);
+
+    const response = await fetch(URL);
+    if (!response.ok) 
     {
-        ingredients: `${ingredient1}, ${ingredient2}, ${ingredient3}`,
-    }
-    const response = await fetch(`${BASEURL}/recipes/findByIngrdients`, 
-    {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apiKey': APIKEY,
-        },
-        body: JSON.stringify(requestBody),
-    });
-    if (response.ok)
-    {
-        const data = await response.json();
-        console.log(data);
-        return data;
+        throw new Error(`HTTP error: ${response.status}`);
     }
     
-
-
-
-
-
-
+    const data = await response.json();
+    console.log(data);
+    return data;
 };
 });
 
