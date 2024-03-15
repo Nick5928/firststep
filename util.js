@@ -60,6 +60,10 @@ function getCal(data) {
 
 };
 
+function getRecipe(ingredient1,ingredient2,ingredient3)
+{ 
+    let URL = ${BASEURL}/recipes/findByIngrdients?apiKey={APIKEY}&ingredients={ingredient1},+{ingredient2},+{ingredient3}
+}
 
 
 
