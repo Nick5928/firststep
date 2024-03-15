@@ -16,6 +16,54 @@
     <body>
 
 
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="tracker.html">CALORIE TRACKER</a></li>
+            <li><a class = "active" href="recipe.html">RECIPE GENERATOR</a></li>
+            <li><a href="plan.html">MEAL PLAN GENERATOR</a></li>
+        </ul>
+
+
+        <h1>RECIPES</h1>
+        <p>
+           Welcome to First Step! On this page you can find differetent recipes using any ingredients you have!
+           We will list 10 recipes based on your choices.
+
+        </p>
+        <p>
+            Choose Up 3 Ingredients that you would like in your recipe.
+        </p>
+        <div>
+            <form>
+                <div class="form-row" id = "target_row">
+                    <div class="form-group">
+                        <label for="ingredient1">First Ingredient:</label>
+                        <input type="text" placeholder="Peaches" id="First_ingredient" required>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <form>
+                <div class="form-row" id = "target_row">
+                    <div class="form-group">
+                        <label for="ingredient2">Second Ingredient:</label>
+                        <input type="text" placeholder="Sugar" id="Second_ingredient">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <form>
+                <div class="form-row" id = "target_row">
+                    <div class="form-group">
+                        <label for="ingredient3">Third Ingredient:</label>
+                        <input type="text" placeholder="Flour" id="Third_ingredient">
+                    </div>
+                </div>
+            </form>
+            <button type="submit" id="submit_recipe">Submit</button>
+        </div>
+        <div id="recipe_data"><p></p></div>
+
 
         
     </body>

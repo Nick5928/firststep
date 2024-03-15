@@ -15,19 +15,91 @@
 
     <body>
 
-        <div id="ingredient_form">
-            <form>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="ingredient">Ingredient</label>
-                        <input type="text" class="form-control" id="ingredient" placeholder="ingredient">
+        <ul>
+		  <li><a href="index.html">HOME</a></li>
+		  <li><a class="active" href="tracker.html">CALORIE TRACKER</a></li>
+		  <li><a href="recipe.html">RECIPE GENERATOR</a></li>
+		  <li><a href="plan.html">MEAL PLAN GENERATOR</a></li>
+		</ul>
+
+        <div id="body_div">
+            <div id="target_cal_container">
+                <form id="target_cal_form">
+                    <div class="form-row" id = "target_row">
+                        <div class="form-group">
+                            <label for="target_cal">Amount of target calories</label>
+                            <input type="number" class="form-control" id="target_cal" placeholder="Target Calories">
+                        </div>
+                    </div>
+                </form>
+
+                <button class="button" id="submit_btn">Submit</button>
+            </div>
+
+            <div>
+                <div class="ingredients_table">
+                    <div id = "ingredient_container">
+                        <table class="table table-bordered" id="ingredient_table">
+                            <caption>Ingredients Table</caption>
+                            <thead>
+                                <tr>
+                                <th>Ingredient Name</th>
+                                <th>Carbs(grams)</th>
+                                <th>Fat(grams)</th>
+                                <th>Protein(grams)</th>
+                                <th>Calories</th>
+                                </tr>
+                            </thead>
+        
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+
+                        <div id="cal_chart"></div>
                     </div>
                 </div>
-            </form>
-        </div>
 
+                <div>
+                    <button type="button" class="button" data-toggle="modal" data-target="#ingredient_input_form">Click here to input ingredient information</button>
+                </div>
+                
 
-        <button id = "gen_res">Gen Res</button>
+                <div class="modal fade" id="ingredient_input_form"  role="dialog" aria-labelledby="ingredient_form" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ingredient_form">Ingredient Input</h5>
+                                <button type="button" class="close" data-dismiss="modal" >
+                                <span>&times;</span>
+                                </button>
+                            </div>
+            
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="ingredient">Ingredient</label>
+                                            <input type="text" class="form-control" id="ingredient" placeholder="Ingredient (example Banana)">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="amount">Amount of Ingredient</label>
+                                            <input type="text" class="form-control" id="amount" placeholder="Amount (example 1)">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+            
+                            <div class="modal-footer">
+                                <button type="button" class="button" data-dismiss="modal">Close</button>
+                                <button class="button" id = "insert_ingredient">Insert ingredient</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         
     </body>
 

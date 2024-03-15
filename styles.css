@@ -1,0 +1,72 @@
+#body_div {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#ingredient_container{
+    display: flex;
+}
+
+#ingredient_table{
+    width: 550px;
+}
+
+
+#target_cal_form{
+    width: 550px;
+}
+
+#target_cal_container{
+    display: flex;
+}
+
+#submit_btn{
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+#target_cal{
+    height: 30px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightgray;
+    color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: none;
+    color: black;
+}
+li a:hover:not(.active) {
+    background-color: rgb(39, 242, 39);
+    color: black;
+    text-decoration: none;
+}
+
+.active{
+    background-color: green;
+    text-decoration: none;
+}
+
+#intro{
+    margin-left: 15px;
+}
