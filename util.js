@@ -23,10 +23,10 @@ $("#submit_recipe").click(async function ()
     let recipe = await getRecipe(ingredient1,ingredient2,ingredient3);
     
 
+    let title1 = recipe[0].title;
 
-    window.alert(recipe.id)
+    $("#recipe_data").find("p").text(title1);
 })
-
 async function getIngredId(ingred) {    
     let response = await fetch(`${BASEURL}/food/ingredients/search?apiKey=${APIKEY}&query=${ingred}&number=1`);
 
@@ -82,8 +82,9 @@ async function getRecipe(ingredient1,ingredient2,ingredient3)
    
     
     let recipe = await response.json();
-    console.log(recipe);
+   
     return recipe;
+    
 };
 });
 
