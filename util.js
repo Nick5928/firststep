@@ -15,6 +15,18 @@ $("#gen_res").click(async function () {
     window.alert(calories);
 })
 
+$("#submit_recipe").click(async function ()
+{
+    let ingredient1 = $("#First_ingredient").val();
+    let ingredient2 = $("#Second_ingredient").val();
+    let ingredient3 = $("#Third_ingredient").val();
+    let recipe = await getRecipe(ingredient1,ingredient2,ingredient3);
+    
+
+
+    window.alert(recipe.id)
+})
+
 async function getIngredId(ingred) {    
     let response = await fetch(`${BASEURL}/food/ingredients/search?apiKey=${APIKEY}&query=${ingred}&number=1`);
 
@@ -62,19 +74,16 @@ function getCal(data) {
 
 async function getRecipe(ingredient1,ingredient2,ingredient3)
 { 
-    const URL = `${BASEURL}/recipes/information?apiKey=${APIKEY}&ingredients=${ingredient1},${ingredient2},${ingredient3}`;
+    let URL = `${BASEURL}/recipes/findByIngredients?apiKey=e9fc8d058c00426586140d364018243a&ingredients=${ingredient1},+${ingredient2},+${ingredient3}`;
 
     console.log(URL);
 
-    const response = await fetch(URL);
-    if (!response.ok) 
-    {
-        throw new Error(`HTTP error: ${response.status}`);
-    }
+    let response = await fetch(URL);
+   
     
-    const data = await response.json();
-    console.log(data);
-    return data;
+    let recipe = await response.json();
+    console.log(recipe);
+    return recipe;
 };
 });
 
